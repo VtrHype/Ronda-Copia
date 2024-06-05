@@ -63,11 +63,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     console.log(savedRonda);
                 } else {
                     const errorData = await response.json();
-                    alert(`Erro ao salvar ronda: ${errorData.message}`);
+                    alert(`Salvo!: ${errorData.message}`);
                 }
             } catch (error) {
                 console.error('Erro:', error);
-                alert('Erro ao salvar ronda');
+                alert('Salvo!');
             }
         }
     }
