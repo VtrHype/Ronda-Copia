@@ -86,6 +86,16 @@ th {
         max-width: 100%;
     }
 }
+ 
+
+
+.minha_classe {
+    background-image: url('imgStv.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 
 .minha_classe td {
     display: block;
