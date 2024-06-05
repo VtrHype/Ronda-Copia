@@ -90,16 +90,25 @@ document.addEventListener('DOMContentLoaded', () => {
                         <label for="contato_local">Contato no Local</label>
                         <input type="text" class="contato_local" id="contato_local" style="text-transform: uppercase;">
                     </td>
-                    <td>
-                        <label for="motivo_disparo">Motivo do Disparo</label>
-                        <select class="motivo_disparo" id="motivo_disparo" style="text-transform: uppercase;">
-                            <option></option>
-                            <option>Ronda interna</option>
-                            <option>Disparo Falso</option>
-                            <option>Provocado pelo Cliente</option>
-                            <option>Pânico</option>
-                        </select>
-                    </td>
+                    <<td>
+                    <label for="motivo_disparo">Motivo</label>
+                    <select class="motivo_disparo" id="motivo_disparo" style="text-transform: uppercase;">
+                        <option>Selecione</option>
+                        
+                        <option>Ronda</option>
+                        <option>Ronda interna</option>
+                        <option>Entrga de Equipamentos</option>
+                        <option>Disparo Falso</option>
+                        <option>Provocado pelo Cliente</option>
+                        <option>Pânico</option>
+                        <option>PB</option>
+                        <option>QAP</option>
+                        <option>Rendição QRF</option>
+                        <option>Atendimento solicitado</option>
+                        <option>Manutenção Moto</option>
+                        <option>Alteração no Local</option>
+                    </select>
+                </td>
                     <td>
                         <label for="descricao">Descrição</label>
                         <input type="text" class="descricao" id="descricao" style="text-transform: uppercase;">

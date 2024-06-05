@@ -73,6 +73,19 @@ th {
     background: #2e2e2e;
 }
 
+.motivo_disparo {
+    width: 100%;
+    max-width: 300px; /* ajuste conforme necessário */
+    padding: 8px;
+    border-radius: 5px;
+}
+
+/* Estilo para telas menores */
+@media screen and (max-width: 600px) {
+    .motivo_disparo {
+        max-width: 100%;
+    }
+}
 
 .minha_classe td {
     display: block;
