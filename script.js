@@ -28,6 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const nome = document.getElementById('nome').value;
             const matricula = document.getElementById('matricula').value;
             const placa = document.getElementById('placa').value;
+            const kmInicio = document.getElementById('kmInicio').value;
+            const kmFinal = document.getElementById('kmFinal').value;
             const cliente = row.querySelector('.cliente').value;
             const hChegada = row.querySelector('.h_chegada').value;
             const hSaidaValue = row.querySelector('.h_saida').value;
@@ -35,12 +37,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const motivoDisparo = row.querySelector('.motivo_disparo').value;
             const descricao = row.querySelector('.descricao').value;
 
-            console.log({ nome, matricula, placa, cliente, hChegada, hSaidaValue, contatoLocal, motivoDisparo, descricao });
+            console.log({ nome, matricula, placa, cliente, hChegada, hSaidaValue, contatoLocal, motivoDisparo, descricao, kmInicio, kmFinal, });
 
             const rondaData = [{
                 nome,
                 matricula,
                 placa,
+                kmInicio,
+                kmFinal,
                 cliente,
                 hChegada,
                 hSaida: hSaidaValue,
@@ -172,6 +176,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('nome').value = '';
         document.getElementById('matricula').value = '';
         document.getElementById('placa').value = '';
+        document.getElementById('kmInicio').value = '';
+        document.getElementById('kmFinal').value = '';
         document.getElementById('data').value = getHoraAtual();
         document.querySelectorAll('#in tr').forEach(row => row.remove());
         addRowButton.disabled = false;
@@ -187,12 +193,16 @@ document.getElementById('finalizar-turno').addEventListener('click', async () =>
         const matricula = document.getElementById('matricula').value;
         const placa = document.getElementById('placa').value;
         const data = document.getElementById('data').value;
+        const kmInicio = document.getElementById('kmInicio').value;
+        const kmFinal = document.getElementById('kmFinal').value;
 
         doc.text('Relatório de Rondas', 14, 20);
         doc.text(`Nome: ${nome}`, 14, 30);
-        doc.text(`Matrícula: ${matricula}`, 14, 40);
-        doc.text(`Placa: ${placa}`, 14, 50);
-        doc.text(`Data: ${data}`, 14, 60);
+        doc.text(`Matrícula: ${matricula}`, 85, 30);
+        doc.text(`Placa: ${placa}`, 14, 40);
+        doc.text(`Data: ${data}`, 85, 20);
+        doc.text(`Km Início: ${kmInicio}`, 85, 40);
+        doc.text(`Km Final: ${kmFinal}`, 147, 40);
 
         const columns = ["Cliente", "Horário de Chegada", "Horário de Saída", "Contato no Local", " Motivo ", "Descrição"];
         const rows = [];
@@ -211,11 +221,12 @@ document.getElementById('finalizar-turno').addEventListener('click', async () =>
         doc.autoTable({
             head: [columns],
             body: rows,
-            startY: 70,
+            startY: 50,
             styles: { fontSize: 10, halign: 'center', valign: 'middle' },
             headStyles: { fillColor: [0, 0, 0], textColor: [255, 255, 255] },
             alternateRowStyles: { fillColor: [240, 240, 240] },
         });
+        
 
         const nomeArquivo = `${nome.toUpperCase()}_${data.replace(/\//g, '-')}.pdf`;
 

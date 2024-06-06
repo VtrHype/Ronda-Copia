@@ -10,11 +10,10 @@ body {
 
 #container {
     background: #1e1e1e;
-    padding: 20px;
-    border-radius: 8px;
-    border: 10px solid #121212;
+    padding: 20px 20px 20px 10px;
+    border-radius: 8px;   
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    width: 80%;
+    width: 99%;
 }
 
 .header {

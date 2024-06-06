@@ -14,11 +14,12 @@
 <body>
     <div id="container">
         <h1>Relatório de Rondas</h1>
+
         <div class="header">
             <label for="nome">Nome:</label>
             <input type="text" id="nome" style="text-transform: uppercase;">
             <label for="matricula">&nbsp;&nbsp;Matrícula:</label>
-            <input type="text" id="matricula" inputmode="numeric">
+            <input type="text" id="matricula" inputmode="numeric" pattern="[0-9]*">
 
         </div>
         <div class="field-group">
@@ -27,6 +28,13 @@
             <label for="placa">Placa:</label>
             <input type="text" id="placa" style="text-transform: uppercase;">
         </div>
+        <div class="field-group">
+            <label for="kmInicio">Km Início:</label>
+            <input type="text" id="kmInicio" inputmode="numeric" pattern="[0-9]*">
+            <label for="kmFinal">Km Final:</label>
+            <input type="text" id="kmFinal" inputmode="numeric" pattern="[0-9]*">
+        </div>
+
         <table id="rondas_tabela" >
             <tbody id="in">
                 <tr class="minha_classe">
