@@ -178,58 +178,60 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Função para gerar o PDF
-    document.getElementById('finalizar-turno').addEventListener('click', async () => {
-        if (confirm('Deseja finalizar o Relatório?')) {
-            const { jsPDF } = window.jspdf;
-            const doc = new jsPDF();
+document.getElementById('finalizar-turno').addEventListener('click', async () => {
+    if (confirm('Deseja finalizar o Relatório?')) {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
 
-      
-            const nome = document.getElementById('nome').value;
-            const matricula = document.getElementById('matricula').value;
-            const placa = document.getElementById('placa').value;
-            const data = document.getElementById('data').value;
+        const nome = document.getElementById('nome').value;
+        const matricula = document.getElementById('matricula').value;
+        const placa = document.getElementById('placa').value;
+        const data = document.getElementById('data').value;
 
-            doc.text('Relatório de Rondas', 14, 20);
-            doc.text(`Nome: ${nome}`, 14, 30);
-            doc.text(`Matrícula: ${matricula}`, 14, 40);
-            doc.text(`Placa: ${placa}`, 14, 50);
-            doc.text(`Data: ${data}`, 14, 60);
+        doc.text('Relatório de Rondas', 14, 20);
+        doc.text(`Nome: ${nome}`, 14, 30);
+        doc.text(`Matrícula: ${matricula}`, 14, 40);
+        doc.text(`Placa: ${placa}`, 14, 50);
+        doc.text(`Data: ${data}`, 14, 60);
 
-            const columns = ["Cliente", "Horário de Chegada", "Horário de Saída", "Contato no Local", "Motivo do Disparo", "Descrição"];
-            const rows = [];
+        const columns = ["Cliente", "Horário de Chegada", "Horário de Saída", "Contato no Local", "Motivo do Disparo", "Descrição"];
+        const rows = [];
 
-            document.querySelectorAll('#rondas_tabela tbody tr').forEach(row => {
-                const cliente = row.querySelector('.cliente').value;
-                const hChegada = row.querySelector('.h_chegada').value;
-                const hSaida = row.querySelector('.h_saida').value;
-                const contatoLocal = row.querySelector('.contato_local').value;
-                const motivoDisparo = row.querySelector('.motivo_disparo').value;
-                const descricao = row.querySelector('.descricao').value;
+        document.querySelectorAll('#rondas_tabela tbody tr').forEach(row => {
+            const cliente = row.querySelector('.cliente').value;
+            const hChegada = row.querySelector('.h_chegada').value;
+            const hSaida = row.querySelector('.h_saida').value;
+            const contatoLocal = row.querySelector('.contato_local').value;
+            const motivoDisparo = row.querySelector('.motivo_disparo').value;
+            const descricao = row.querySelector('.descricao').value;
 
-                rows.push([cliente, hChegada, hSaida, contatoLocal, motivoDisparo, descricao]);
-            });
+            rows.push([cliente, hChegada, hSaida, contatoLocal, motivoDisparo, descricao]);
+        });
 
-            doc.autoTable({
-                head: [columns],
-                body: rows,
-                startY: 70,
-                styles: { fontSize: 10, halign: 'center', valign: 'middle' },
-                headStyles: { fillColor: [0, 0, 0], textColor: [255, 255, 255] },
-                alternateRowStyles: { fillColor: [240, 240, 240] },
-            }); 
+        doc.autoTable({
+            head: [columns],
+            body: rows,
+            startY: 70,
+            styles: { fontSize: 10, halign: 'center', valign: 'middle' },
+            headStyles: { fillColor: [0, 0, 0], textColor: [255, 255, 255] },
+            alternateRowStyles: { fillColor: [240, 240, 240] },
+        });
 
+        const nomeArquivo = `${nome.toUpperCase()}_${data.replace(/\//g, '-')}.pdf`;
 
-                     const pdfBase64 = doc.output('datauristring');
-                          if (window.Android) {
-                              window.Android.savePDF(nomeArquivo, pdfBase64);
-                        } else {
-                               console.error("Interface Android não encontrada!");
-                        }
+        // Salvar PDF localmente
+        doc.save(nomeArquivo);
 
-            const nomeArquivo = `${nome.toUpperCase()}_${data.replace(/\//g, '-')}.pdf`;
-            doc.save(nomeArquivo);
-
-            limparPlanilha();
+        // Salvar PDF na interface Android
+        const pdfBase64 = doc.output('datauristring');
+        if (window.Android) {
+            window.Android.savePDF(nomeArquivo, pdfBase64);
+        } else {
+            console.error("Interface Android não encontrada!");
         }
-    });
+
+        limparPlanilha();
+    }
+  });
+
 });
