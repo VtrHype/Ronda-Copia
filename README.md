@@ -1,3 +1,4 @@
+Ronda STV - Documentação do Projeto
 1. Introdução
 O projeto Ronda STV é uma aplicação desenvolvida para auxiliar na elaboração de relatórios de rondas de segurança. Ele permite o registro de informações importantes durante as rondas, como nome do agente, matrícula, placa do veículo, quilometragem inicial e final, entre outros. Além disso, o sistema gera um relatório em formato PDF contendo todas as informações registradas.
 
@@ -43,4 +44,3 @@ Além da funcionalidade de registro, o projeto também inclui uma página de con
 
 9. Considerações Finais
 O projeto Ronda STV oferece uma solução completa e prática para profissionais da área de segurança patrimonial, permitindo a elaboração rápida e eficiente de relatórios de rondas de segurança diretamente de dispositivos móveis Android, além de oferecer uma interface de consulta das informações registradas. Para mais informações ou suporte, entre em contato com o desenvolvedor.
-
