@@ -194,7 +194,7 @@ document.getElementById('finalizar-turno').addEventListener('click', async () =>
         doc.text(`Placa: ${placa}`, 14, 50);
         doc.text(`Data: ${data}`, 14, 60);
 
-        const columns = ["Cliente", "Horário de Chegada", "Horário de Saída", "Contato no Local", "Motivo do Disparo", "Descrição"];
+        const columns = ["Cliente", "Horário de Chegada", "Horário de Saída", "Contato no Local", " Motivo ", "Descrição"];
         const rows = [];
 
         document.querySelectorAll('#rondas_tabela tbody tr').forEach(row => {
