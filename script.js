@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }];
 
             try {
-                const response = await fetch('http://localhost:3000/api/rondas/save', {
+                const response = await fetch('https://4e10-2804-58bc-1072-7300-bc79-4d03-9874-ee3f.ngrok-free.app/api/rondas/save', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
