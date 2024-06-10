@@ -1,0 +1,128 @@
+body {
+    background-color: #202020;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.header {
+    
+    background-color:#005F36;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    align-items: center;
+    border-bottom: solid 5px #FAA61A;
+}
+
+.header h1 {
+    margin: 0;
+    font-style: italic;
+    letter-spacing: 2px;
+    
+} 
+
+#searchInput {
+    width: 50%;
+}
+#searchButton {
+    text-align: center;
+    font-size: 17px;
+    width: 150px;
+    height: 39px;
+    box-shadow: 0 0 5px rgb(0, 0, 0);
+    border-radius: 7px;
+    margin: -10px;
+    letter-spacing: 2px;
+}
+
+.logout-button {
+    
+    width: 100px;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 7px;
+    box-shadow: 0 0 9px rgb(24, 24, 24);
+    
+}
+
+.container {
+    padding: 20px;
+    text-align: center;
+}
+
+.container h2 {
+    margin-top: 0;
+}
+
+input {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+    width: 300px;
+}
+
+
+button {
+    background-color:#005F36;
+    color: #fff;
+    cursor: pointer;
+    border: solid 3px #FAA61A;
+}
+
+button:hover {
+    background-color: #032003;
+}
+
+table {
+    width: 90%;
+    margin-top: 30px;
+    border-collapse: collapse;
+    
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ffffff;
+    letter-spacing: 1px;
+    
+}
+
+th {
+    background-color: #333333;
+    
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #1a1a1a;
+    
+}
+
+tbody tr:nth-child(even) {
+    background-color: #2a2a2a;
+    
+}
+
+.acao-button {
+    cursor: pointer;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+.edit-button {
+    background-color: #054703;
+    color: white;
+    margin-right: 5px;
+}
+
+.delete-button {
+    background-color: #054703;
+    color: white;
+}

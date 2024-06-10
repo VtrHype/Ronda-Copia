@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MongoDB Search</title>
+    <link rel="stylesheet" href="styledb.css">
+</head>
+<body>
+    <div class="header">
+        <h1>SISTEMA db.</h1>
+        <button class="logout-button">Sair</button>
+    </div>
+    <div class="container">
+        <h2>Bem vindo <span id="userEmail"></span></h2>
+        <input type="text" id="searchInput" placeholder="Pesquisar...">
+        <button id="searchButton">Pesquisar</button>
+        <table id="resultsTable">
+            <thead>
+                <tr>
+                    
+                    <th>Nome</th>
+                    <th>Mtricula</th>
+                    <th>Placa</th>
+                    <th>Cliente</th>
+                    <th>ContatoLocal</th>
+                    <th>MotivoDisparo</th>
+                    <th>Descrição</th>
+                    <th>HoraChegada</th>
+                    <th>HoraSaida</th>
+                    <th>Data</th>                    
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Results will be appended here -->
+            </tbody>
+        </table>
+    </div>
+    <script src="scriptdb.js"></script>
+</body>
+</html>
