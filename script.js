@@ -97,20 +97,19 @@ document.addEventListener('DOMContentLoaded', () => {
                     <<td>
                     <label for="motivo_disparo">Motivo</label>
                     <select class="motivo_disparo" id="motivo_disparo" style="text-transform: uppercase;">
-                        <option>Selecione</option>
-                        
-                        <option>Ronda</option>
-                        <option>Ronda Interna</option>
-                        <option>Entrega de Equipamentos</option>
-                        <option>Disparo Falso</option>
-                        <option>Provocado pelo Cliente</option>
-                        <option>Pânico</option>
-                        <option>PB</option>
-                        <option>QAP</option>
-                        <option>Rendição QRF</option>
-                        <option>Atendimento Solicitado</option>
-                        <option>Manutenção Moto</option>
-                        <option>Alteração no Local</option>
+                    <option>Selecione</option>
+                    <option>Ronda</option>
+                    <option>Ronda Interna</option>
+                    <option>Entrega de Equipamentos</option>
+                    <option>Alarme</option>
+                    <option>Atendimento Solicitado</option>
+                    <option>Pânico</option>
+                    <option>PB</option>
+                    <option>QAP</option>
+                    <option>Rendição QRF</option>
+                    <option>Trocar de Moto</option>
+                    <option>Manutenção Moto</option>
+                    <option>Alteração no Local</option>
                     </select>
                 </td>
                     <td>
